@@ -1,28 +1,22 @@
-== README
+Year Up Puget Sound
+Student Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This system will be a customizable ticket web application that will track and organize issues that occur during the student internship phase. It will also include the Laptop Checkout application.
 
-Things you may want to cover:
+Features
 
-* Ruby version
+Ticket Service:
+-	Ability to create, update and delete a ticket.
+-	Ability to assign the ticket to a user.
+-	Notifies users via Email when specific events occur. (Ex. Being assigned a ticket)
+-	Should track a ticket’s history. 
 
-* System dependencies
+User Accounts:
+-	Ability to create, modify and delete a user account.
+-	Should be able to import a list of users for mass creation. (CSV File)
+-	Should be organized by Cohort/LC or Staff.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Laptop Checkout Service:
+-	Ability to add and delete a laptop.
+-	Ability to checkout a laptop to a user.
+-	Should track a laptop and user’s checkout history.
