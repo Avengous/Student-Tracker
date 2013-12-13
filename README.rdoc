@@ -4,18 +4,28 @@ This system will be a customizable ticket web application that will track and or
 
 == <b>Features</b>
 
-Ticket Service::
--	Ability to create, update and delete a ticket.
--	Ability to assign the ticket to a user.
--	Notifies users via Email when specific events occur. (Ex. Being assigned a ticket)
--	Should track a ticket’s history. 
+Ticket Service:
 
-User Accounts::
--	Ability to create, modify and delete a user account.
--	Should be able to import a list of users for mass creation. (CSV File)
--	Should be organized by Cohort/LC or Staff.
+- Ability to create, update and delete a ticket.
 
-Laptop Checkout Service::
--	Ability to add and delete a laptop.
--	Ability to checkout a laptop to a user.
--	Should track a laptop and user’s checkout history.
+- Ability to assign the ticket to a user.
+
+- Notifies users via Email when specific events occur. (Ex. Being assigned a ticket)
+
+- Should track a ticket’s history. 
+
+User Accounts:
+
+- Ability to create, modify and delete a user account.
+
+- Should be able to import a list of users for mass creation. (CSV File)
+
+- Should be organized by Cohort/LC or Staff.
+
+Laptop Checkout Service:
+
+- Ability to add and delete a laptop.
+
+- Ability to checkout a laptop to a user.
+
+- Should track a laptop and user’s checkout history.
