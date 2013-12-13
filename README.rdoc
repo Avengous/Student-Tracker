@@ -4,7 +4,7 @@ This system will be a customizable ticket web application that will track and or
 
 == <b>Features</b>
 
-Ticket Service:
+<b>Ticket Service:</b>
 
 - Ability to create, update and delete a ticket.
 
@@ -14,7 +14,7 @@ Ticket Service:
 
 - Should track a ticket’s history. 
 
-User Accounts:
+<b>User Accounts:</b>
 
 - Ability to create, modify and delete a user account.
 
@@ -22,7 +22,7 @@ User Accounts:
 
 - Should be organized by Cohort/LC or Staff.
 
-Laptop Checkout Service:
+<b>Laptop Checkout Service:</b>
 
 - Ability to add and delete a laptop.
 
