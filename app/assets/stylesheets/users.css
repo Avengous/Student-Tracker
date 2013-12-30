@@ -1,7 +1,13 @@
 #users_index {
-	width: 400px;
+	width: 42%;
 	margin: 0 auto;
 	text-align: left;
+	background-color: white;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 14px;
+	padding-bottom: 3px;
 }
 
 h1 {
@@ -10,4 +16,16 @@ h1 {
 
 td, th {
 	padding-right: 5px;
+	padding-left: 5px;
 }
+
+table {
+	border-collapse: collapse;
+}
+
+tr th {
+	border-color: black;
+	border-bottom-style: solid;
+	border-width: 1px;
+}
+

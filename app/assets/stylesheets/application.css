@@ -67,7 +67,42 @@ html {
 	
 }
 
+#table_button {
+   border-style: none;
+   background: #2a54b5;
+   background: -webkit-gradient(linear, left top, left bottom, from(#234193), to(#2a54b5));
+   background: -webkit-linear-gradient(top, #234193, #2a54b5);
+   background: -moz-linear-gradient(top, #234193, #2a54b5);
+   background: -ms-linear-gradient(top, #234193, #2a54b5);
+   background: -o-linear-gradient(top, #234193, #2a54b5);
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 10px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+   
+#table_button:hover {
+   border-top-color: #d68f01;
+   background: #d68f01;
+   color: #ffffff;
+   }
+   
+#table_button:active {
+   border-top-color: #234193;
+   background: #234193;
+   }
+
+
 /* Navigation Bar */
+
 #navbar {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
@@ -89,15 +124,16 @@ html {
 }
 
 #navbar ul li {
+	
 	background-color: #234093;
 	font-weight: bold;
 	float: left;
 	height:30px;
 	width:100px;
-	box-shadow: 0 1px 2px #fff, /*bottom external highlight*/
-				0 -1px 1px #666, /*top external shadow*/ 
+	box-shadow: 0 1px 1px #fff, /*bottom external highlight*/
+				0 0 0 #666, /*top external shadow*/ 
 				inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/ 
-				inset 0 1px 1px rgba(255,255,255,0.8); /*top internal highlight*/
+				inset 0 1px 1px rgba(255,255,255,0.5); /*top internal highlight*/
 }
 
 #navbar ul ul ul {
@@ -168,10 +204,10 @@ html {
 
 #navbar li:hover a { 
 	background: #234093;
-	box-shadow: 0 1px 2px #fff, /*bottom external highlight*/
-				0 -1px 1px #666, /*top external shadow*/ 
+	box-shadow: 0 1px 1px #fff, /*bottom external highlight*/
+				0 0 0 #666, /*top external shadow*/ 
 				inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/ 
-				inset 0 1px 1px rgba(255,255,255,0.8); /*top internal highlight*/
+				inset 0 1px 1px rgba(255,255,255,0.5); /*top internal highlight*/
 }
 
 #navbar li:hover li a:hover {
