@@ -13,6 +13,7 @@
  */
 
 html {
+	font-family: Arial, Helvetica, monospace; 
 	background: no-repeat center center fixed; 
 	/* IE10 Consumer Preview */ 
 	background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #234093 300%);
@@ -59,6 +60,11 @@ html {
 	font-size: 14px;
 	text-align: center;
 	padding-bottom: 10px;
+}
+
+/* Buttons */
+#large_button {
+	
 }
 
 /* Navigation Bar */
@@ -171,3 +177,4 @@ html {
 #navbar li:hover li a:hover {
 	background: #D68F01;
 }
+

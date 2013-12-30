@@ -1,4 +1,13 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+#users_index {
+	width: 400px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+h1 {
+	text-align: center;
+}
+
+td, th {
+	padding-right: 5px;
+}
