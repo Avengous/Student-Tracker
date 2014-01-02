@@ -9,9 +9,10 @@
 			<th></th>
 		</tr>
 		
+		<% @user.each do |user| %>
 		<tr>
-			<td>Giovanni Schuoler</td>
-			<td>giovanni.schuoler0114@yearup.org</td>
+			<td><%= "#{user.firstname} #{user.lastname}" %></td>
+			<td><%= user.email %></td>
 			
 			<td>
 				<button id="table_button" type="button">Edit</button>
@@ -21,9 +22,10 @@
 				<button id="table_button" type="button">Delete</button>
 			</td>
 		</tr>
+		<% end %>
 	</table>	
 </div>
 
 <div id="table_footer">
-				<button id="table_button" type="button"><%= link_to "Add User", users_new_path %></button>
+				<button id="table_button" type="button"><%= link_to "Add User", new_user_path %></button>
 </div>
