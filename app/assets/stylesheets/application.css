@@ -214,3 +214,36 @@ html {
 	background: #D68F01;
 }
 
+/* Page Stuff */
+#header_width {
+	width: 20em;
+}
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+#container {
+   min-height:100%;
+   position:relative;
+}
+
+header {
+   padding:10px;
+}
+
+body {
+   padding:10px;
+   padding-bottom:20px;   /* Height of the footer */
+}
+
+footer {
+	border-top: solid 1px black;
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:20px;   /* Height of the footer */
+}

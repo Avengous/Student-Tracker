@@ -29,3 +29,10 @@ tr th {
 	border-width: 1px;
 }
 
+#table_footer {
+	width: 42%;
+	margin: 0 auto;
+	text-align: right;
+}
+
+

@@ -7,18 +7,21 @@
 	<%= render "layouts/stylesheets" %>
 </head>
 
-<header id="logo"></header></td>
+<div id="container">
+	<header id="logo"></header></td>
+	<div id="appname">Student Tracker</div>
 
-<div id="appname">
-	Student Tracker
+	<body>
+		<div class="container">
+			<header>
+				<%= render "layouts/navbar" %>
+			</header>
+		<%= yield %>
+		</div>
+	</body>
+
+	<footer>
+		
+	</footer>
 </div>
-
-<body>
-	<div class="container">
-		<header>
-			<%= render "layouts/navbar" %>
-		</header>
-	<%= yield %>
-	</div>
-</body>
 </html>
