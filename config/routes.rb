@@ -1,5 +1,9 @@
 StudentTracker::Application.routes.draw do
-  get "sessions/new"
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+    
   root 'pages#home'
+  
+  match '/signin' => 'sessions#new', :via => [:get]
+  match '/signout' => 'sessions#destroy', :via => [:get]
 end
