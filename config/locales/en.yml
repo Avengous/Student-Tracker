@@ -19,5 +19,20 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+en:  
+  activerecord:
+    models: 
+      user: "User"
+    attributes:
+      user:
+        email: "Email Address"
+        firstname: "First Name"
+        lastname: "Last Name"
+    errors:
+      models:
+        user:
+          attributes:
+            firstname:
+              blank: "can't be blank"
+            lastname:
+              blank: "can't be blank"

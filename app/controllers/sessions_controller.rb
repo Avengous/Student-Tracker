@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
                              params[:session][:password])
     if user.nil?
       flash.now[:error] = "Invalid Email/Password"
+      @title = "Sign In"
       render new_session_path
     else
       

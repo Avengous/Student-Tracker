@@ -264,15 +264,36 @@ footer {
 }
 
 #error_explanation {
-	width: 300px;
+	  display: block;
+      position: static;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      margin-top: 0px;
+      margin-left: -90px;
+	
 }
 
 #error_explanation ul li {
 	text-align: left;
 }
 
+#error_explanation ul {
+	text-align: center;
+}
+
+#error_explanation li {
+	margin-left: 50px;
+}
+
 #field_with_errors {
-	display: inline;
+	  display: block;
+      position: static;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      margin-top: 0px;
+      margin-left: -75px;
 }
 
 form {
