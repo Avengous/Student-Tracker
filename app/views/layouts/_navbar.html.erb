@@ -26,7 +26,11 @@
 		</li>
 		
 		<li>
-			<a href=<%= signin_path %>>Sign In</a>
+			<% if signed_in? %>
+				<a href=<%= signout_path %>>Sign Out</a>
+			<% else %>
+				<a href=<%= signin_path %>>Sign In</a>
+			<% end %>
 		</li>
 	</ul>
 </nav>
