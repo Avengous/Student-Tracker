@@ -1,35 +1,41 @@
 <nav id="navbar" class="round">
 	<ul>
-		<li><a href=<%= root_path %>>Home</a></li>
+		<% if signed_in? %>
+			<li><a href=<%= root_path %>>Home</a></li>
+		<% end %>
 		
-		<li><a>Tickets</a>
-			<ul>
-				<li><a href=<%= root_path %>>Submit a Ticket</a></li>
-				<li><a href=<%= root_path %>>View Tickets</a></li>
-			</ul>
-		</li>
-		
-		<li><a>Laptops</a>
-			<ul>
-				<li><a href=<%= root_path %>>Check-Out</a></li>
-				<li><a href=<%= root_path %>>Check-In</a></li>
-				<li><a href=<%= root_path %>>Status</a></li>	
-			</ul>
-		</li>
+		<% if signed_in? %>
+			<li><a>Tickets</a>
+				<ul>
+					<li><a href=<%= root_path %>>Submit a Ticket</a></li>
+					<li><a href=<%= root_path %>>View Tickets</a></li>
+				</ul>
+			</li>
+		<% end %>
 
-		<li><a>Manage</a>
-			<ul>
-				<li><a href=<%= root_path %>>Tickets</a></li>
-				<li><a href=<%= users_path %>>Users</a></li>
-				<li><a href=<%= root_path %>>Laptops</a></li>
-			</ul>
-		</li>
+		<% if signed_in? %>
+			<li><a>Laptops</a>
+				<ul>
+					<li><a href=<%= root_path %>>Check-Out</a></li>
+					<li><a href=<%= root_path %>>Check-In</a></li>
+					<li><a href=<%= root_path %>>Status</a></li>	
+				</ul>
+			</li>
+		<% end %>
+
+		<% if signed_in? %>		
+			<li><a>Manage</a>
+				<ul>
+					<li><a href=<%= root_path %>>Tickets</a></li>
+					<li><a href=<%= users_path %>>Users</a></li>
+					<li><a href=<%= root_path %>>Laptops</a></li>
+				</ul>
+			</li>
+		<% end %>
 		
 		<li>
 			<% if signed_in? %>
 				<a href=<%= signout_path %>>Sign Out</a>
-			<% else %>
-				<a href=<%= signin_path %>>Sign In</a>
 			<% end %>
 		</li>
 	</ul>
