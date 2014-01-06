@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: [:new, :create, :destroy]
+  before_action :correct_user,   only: [:show, :edit, :update]
+  before_action :admin_user,     only: [:index, :new, :create, :destroy]
   
   def index
     @title = "Staff"
@@ -21,9 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      sign_in @user
-      #flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      redirect_to users_path
     else
       render 'new'
     end
@@ -40,6 +37,11 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    User.find(params[:id]).destroy
+    redirect_to users_url
   end
   
   private

@@ -15,11 +15,21 @@
 			<td><%= user.email %></td>
 			
 			<td>
-				<button id="table_button" type="button">Edit</button>
+				<button id="table_button" type="button">
+					<%= link_to "Edit", edit_user_path(user) %>
+				</button>
 			</td>
 			
 			<td>
-				<button id="table_button" type="button">Delete</button>
+				<% if current_user.admin? && !current_user?(user) %>
+				<button id="table_button" type="button">
+					<%= link_to "Delete", user, method: :delete, data: { confirm: "You sure?" } %>
+				</button>
+				<% else %>
+					<button id="table_button" type="button" onclick="alert('Cannot remove Admin account.')">
+						Delete
+					</button>
+				<% end %>
 			</td>
 		</tr>
 		<% end %>

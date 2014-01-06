@@ -1,6 +1,6 @@
-<h1><%= @user.firstname %> <%= @user.lastname %></h1>
-<h2><%= @user.password %></h2>
-<h2><%= @user.encrypted_password %></h2>
-<h2><%= @user.email %></h2>
-<h2><%= @user.id %></h2>
-<h3><%= @user %></h3>
+<h1>[<%= @user.id %>]<%= @user.firstname %> <%= @user.lastname %></h1>
+<h1><%= @user %></h2>
+<h1>Email: <%= @user.email %></h2>
+<h1>Password Digest: <%= @user.password_digest %></h2>
+<h1>Admin: <%= @user.admin %></h2>
+
