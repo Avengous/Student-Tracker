@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
   
   def index
-    @title = "Users"
+    @title = "Staff"
     @user = User.all
   end
   
