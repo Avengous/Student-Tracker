@@ -1,3 +1,4 @@
+=begin
 class User < ActiveRecord::Base
   attr_accessor   :password, :salt
   attr_accessible :firstname, :lastname, :email, :password, :password_confirmation
@@ -98,3 +99,4 @@ class User < ActiveRecord::Base
     end
     
 end
+=end
