@@ -44,6 +44,10 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
+  def mass_create_staff
+    
+  end
+  
   private
   
     def user_params
