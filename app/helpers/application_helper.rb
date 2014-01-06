@@ -1,4 +1,5 @@
 module ApplicationHelper
+  
   # Return a title on a per-page basis.
   def title
     base_title = "YUPS"
@@ -8,4 +9,10 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+  
+  def revision
+    revision = `git rev-parse HEAD`.chomp
+    return revision[0..12]
+  end
+
 end
