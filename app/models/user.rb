@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :email, :password, :password_confirmation
   
+  before_validation :new_user_password
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   
@@ -27,6 +28,13 @@ class User < ActiveRecord::Base
   end
 
   private
+  
+    def new_user_password
+      if new_record? && self.password.nil?
+        self.password = "yearup"
+        self.password_confirmation = "yearup"
+      end
+    end
 
     def create_remember_token
       self.remember_token = User.encrypt(User.new_remember_token)

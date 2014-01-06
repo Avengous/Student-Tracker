@@ -10,7 +10,7 @@
 		<%= f.text_field :lastname %><br />
 		
 		<%= f.label :email %><br />
-		<%= f.text_field :email %><br />	
+		<%= f.text_field :email %><br />
 		
         <%= f.label :password %><br />	
         <%= f.password_field :password %><br />	
@@ -20,5 +20,7 @@
 		
 		<%= f.submit "Add User"%>
 	</div>
+	
+	<div id="error_explanation">If the password field is left blank, the default password will be used.</div>
 
 <% end %>

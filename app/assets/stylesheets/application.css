@@ -48,6 +48,10 @@ a {
 	text-decoration: none;
 }
 
+#users_link {
+	color: black;
+}
+
 /*Year Up Logo*/
 #logo {
 	background-image: url('/assets/logo.png');

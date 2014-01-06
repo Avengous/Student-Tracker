@@ -11,7 +11,7 @@
 		
 		<% @user.each do |user| %>
 		<tr>
-			<td><%= "#{user.firstname} #{user.lastname}" %></td>
+			<td><%= link_to "#{user.firstname} #{user.lastname}", user_path(user), :id => "users_link" %></td>
 			<td><%= user.email %></td>
 			
 			<td>
