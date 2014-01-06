@@ -1,7 +1,7 @@
-<% if signed_in? %>	
+<% if signed_in? %>
 	<nav id="navbar" class="round">
 		<ul>
-			<li><a href=<%= root_path %>>Home</a></li>
+			<li><a href=<%= user_path(current_user) %>>Home</a></li>
 		
 			<li><a>Tickets</a>
 				<ul>
@@ -17,7 +17,8 @@
 					<li><a href=<%= root_path %>>Status</a></li>	
 				</ul>
 			</li>
-	
+			
+			<% if current_user.admin? %>
 			<li><a>Manage</a>
 				<ul>
 					<li><a href=<%= root_path %>>Tickets</a></li>
@@ -26,10 +27,15 @@
 					<li><a href=<%= root_path %>>Laptops</a></li>
 				</ul>
 			</li>
-	
-			<li>
-				<a href=<%= signout_path %>>Sign Out</a>
+			<% end %>
+
+			<li><a><%= current_user.firstname %></a>
+				<ul>
+					<li><a href=<%= edit_user_path(current_user) %>>Change Password</a></li>
+					<li><a href=<%= signout_path %>>Sign Out</a></li>
+				</ul>
 			</li>
+
 		</ul>
 	</nav>
 <% end %>

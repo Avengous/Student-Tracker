@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:new, :create, :destroy]
   
   def index
     @title = "Staff"
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
-    @title = "New User"
+    @title = "New Staff Account"
   end
   
   def create
@@ -26,6 +26,19 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render 'new'
+    end
+  end
+  
+  def edit
+    @user = current_user
+    @title = "Settings"
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
   
