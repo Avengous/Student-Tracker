@@ -11,11 +11,11 @@
   <div id="multi_user_text_field" class="span6 offset3">
     <%= form_tag(controller: "users", action: "add_multiple_users", method: "post", size: 100) do %> 
 	  <div>Format: John Doe some@email.com</div>
-	  <div>Please separate each entry with a comma.</div><br />
+	  <div>Please separate each entry with a new line.</div><br />
       <%= text_area_tag :entries, nil, size: '50x15'%>
 
-      <%= submit_tag "Add Users" %>
-      <div class="notice">All accounts created with this will use the default password.</div>
+      <%= submit_tag "Add Users", :id => 'table_button' %>
+      <div class="notice" style>All accounts created with this will use the default password.</div>
     <% end %>
   </div>
 </div>
