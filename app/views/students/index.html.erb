@@ -1,0 +1,35 @@
+<h1>Student Manager</h1>
+
+<div id="users_index">	
+	<table>
+		<tr>
+			<th id="header_width">First Name</th>
+			<th id="header_width">Last Name</th>
+			<th></th>
+			<th></th>
+		</tr>
+		
+		<% @student.each do |student| %>
+		<tr>
+			<td><%= student.firstname %></td>
+			<td><%= student.lastname %></td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Edit", students_path %>
+				</button>
+			</td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Delete", students_path %>
+				</button>
+			</td>
+		</tr>
+		<% end %>
+	</table>	
+</div>
+
+<div id="table_footer">
+				<button id="table_button" type="button"><%= link_to "Add Student", students_path %></button>
+</div>

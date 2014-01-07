@@ -1,0 +1,35 @@
+<h1>Laptop Manager</h1>
+
+<div id="users_index">	
+	<table>
+		<tr>
+			<th id="header_width">Item Name</th>
+			<th id="header_width">Scan Code</th>
+			<th></th>
+			<th></th>
+		</tr>
+		
+		<% @laptop.each do |laptop| %>
+		<tr>
+			<td><%= laptop.itemname %></td>
+			<td><%= laptop.scancode %></td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Edit", laptops_path %>
+				</button>
+			</td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Delete", laptops_path %>
+				</button>
+			</td>
+		</tr>
+		<% end %>
+	</table>	
+</div>
+
+<div id="table_footer">
+				<button id="table_button" type="button"><%= link_to "Add Laptop", laptops_path %></button>
+</div>
