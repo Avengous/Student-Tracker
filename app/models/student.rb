@@ -1,6 +1,8 @@
 class Student < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :email
   
+  has_many :transactions
+  
   before_save { self.email = email.downcase }
   
   validates :firstname, :presence => true,
