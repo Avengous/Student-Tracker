@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :correct_user,   only: [:show, :edit, :update]
-  before_action :admin_user,     only: [:index, :new, :create, :destroy]
+  before_action :admin_user,     only: [:index, :new, :create, :destroy, :add_multiple_users, :multicreate]
   
   def index
     @title = "Staff"
