@@ -1,9 +1,35 @@
-<% if @user.errors.any? %>
-	<div id="error_explanation">
-		<ul><strong><%= pluralize(@user.errors.count, "Error") %></strong>
-		<% @user.errors.full_messages.each do |message| %>
-			<li><%= message %></li>
-		<% end %>
-		</ul>
-	</div>
+<% if !@user.nil? %>
+	<% if @user.errors.any? %>
+		<div id="error_explanation">
+			<ul><strong><%= pluralize(@user.errors.count, "Error") %></strong>
+			<% @user.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+<% end %>
+
+<% if !@student.nil? %>
+	<% if @student.errors.any? %>
+		<div id="error_explanation">
+			<ul><strong><%= pluralize(@student.errors.count, "Error") %></strong>
+			<% @student.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+<% end %>
+
+<% if !@laptop.nil? %>
+	<% if @laptop.errors.any? %>
+		<div id="error_explanation">
+			<ul><strong><%= pluralize(@laptop.errors.count, "Error") %></strong>
+			<% @laptop.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
 <% end %>

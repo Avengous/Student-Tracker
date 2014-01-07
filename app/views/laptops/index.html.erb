@@ -16,7 +16,7 @@
 			
 			<td>
 				<button id="table_button" type="button">
-					<%= link_to "Edit", laptops_path %>
+					<%= link_to "Edit", edit_laptop_path(laptop) %>
 				</button>
 			</td>
 			
@@ -31,5 +31,5 @@
 </div>
 
 <div id="table_footer">
-				<button id="table_button" type="button"><%= link_to "Add Laptop", laptops_path %></button>
+				<button id="table_button" type="button"><%= link_to "Add Laptop", new_laptop_path %></button>
 </div>

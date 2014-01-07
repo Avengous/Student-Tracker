@@ -32,6 +32,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    #@user.attributes = params[:user]
+    #@user.save(validate:false)  
     if @user.update_attributes(user_params)
       redirect_to @user
     else

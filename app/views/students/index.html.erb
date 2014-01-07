@@ -3,20 +3,20 @@
 <div id="users_index">	
 	<table>
 		<tr>
-			<th id="header_width">First Name</th>
-			<th id="header_width">Last Name</th>
+			<th id="header_width">Name</th>
+			<th id="header_width">Email</th>
 			<th></th>
 			<th></th>
 		</tr>
 		
 		<% @student.each do |student| %>
 		<tr>
-			<td><%= student.firstname %></td>
-			<td><%= student.lastname %></td>
+			<td><%= student.firstname %> <%= student.lastname %></td>
+			<td><%= student.email %></td>
 			
 			<td>
 				<button id="table_button" type="button">
-					<%= link_to "Edit", students_path %>
+					<%= link_to "Edit", edit_student_path(student) %>
 				</button>
 			</td>
 			
@@ -31,5 +31,5 @@
 </div>
 
 <div id="table_footer">
-				<button id="table_button" type="button"><%= link_to "Add Student", students_path %></button>
+				<button id="table_button" type="button"><%= link_to "Add Student", new_student_path %></button>
 </div>

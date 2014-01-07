@@ -1,0 +1,21 @@
+<% provide(:title, "Settings") %> 
+
+<h1>Editing <%= @laptop.itemname %></h1>
+
+<div class="row">
+  	<div class="span6 offset3">
+    	<%= form_for(@laptop) do |f| %>
+		    <%= render 'shared/error_messages', object: f.object %>
+		    
+		    <%= f.label :itemname %>
+		    <%= f.text_field :itemname %>
+		    
+		    <%= f.label :scancode %>
+		    <%= f.text_field :scancode %>
+		
+		    <%= f.submit "Save Changes", class: "btn btn-large btn-primary", id: "table_button" %>
+    	<% end %>
+  	</div>
+</div>
+	
+
