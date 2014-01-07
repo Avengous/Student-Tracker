@@ -1,6 +1,8 @@
 StudentTracker::Application.routes.draw do
   resources :users, :path => "/staff"
   resources :sessions, only: [:new, :create, :destroy]
+  resources :students
+  resources :laptops
     
   root  'pages#home'
   
