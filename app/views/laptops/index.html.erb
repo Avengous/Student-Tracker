@@ -22,7 +22,7 @@
 			
 			<td>
 				<button id="table_button" type="button">
-					<%= link_to "Delete", laptops_path %>
+					<%= link_to "Delete", laptop, method: :delete, data: { confirm: "Are you sure?" } %>
 				</button>
 			</td>
 		</tr>

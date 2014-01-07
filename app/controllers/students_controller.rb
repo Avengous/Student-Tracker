@@ -24,8 +24,9 @@ class StudentsController < ApplicationController
   end
   
   def update
+    @student = Student.find_by_id(params[:id])
     if @student.update_attributes(student_params)
-      redirect_to @student
+      redirect_to students_path
     else
       render 'edit'
     end

@@ -24,11 +24,17 @@ class LaptopsController < ApplicationController
   end
   
   def update
+    @laptop = Laptop.find_by_id(params[:id])
     if @laptop.update_attributes(laptop_params)
-      redirect_to @laptop
+      redirect_to laptops_path
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    Laptop.find(params[:id]).destroy
+    redirect_to laptops_url
   end
   
   private
