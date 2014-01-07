@@ -3,6 +3,7 @@ StudentTracker::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :students
   resources :laptops
+  resources :transactions
     
   root  'pages#home'
   
