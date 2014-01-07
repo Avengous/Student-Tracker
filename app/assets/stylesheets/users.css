@@ -35,7 +35,27 @@ tr th {
 	text-align: right;
 }
 
-
 div.row {
 	padding-bottom: 30px;
+}
+
+#user_entries {
+	display: inline-block;
+	width: 400px;
+	height: 300px;
+	float:none;
+}
+
+#multi_user_text_field {
+	width: auto;
+	text-align: left;
+	vertical-align: top;
+}
+
+#multi_user_text_field form {
+	width: 400px;
+}
+
+div.notice {
+	text-align: center;
 }

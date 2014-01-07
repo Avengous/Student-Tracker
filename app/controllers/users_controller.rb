@@ -44,8 +44,22 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
-  def mass_create_staff
-    
+  def add_multiple_users
+    @title = "Add Users"
+    @entries = params[:entries]
+    multicreate
+  end
+  
+  def multicreate
+    if @entries.nil? then
+    else
+      @entries.each_line do |entry|
+        entry = entry.split(" ")    
+        @user = User.new(firstname: entry[0], lastname: entry[1], email: entry[2].downcase, password: "yearup", password_confirmation: "yearup")
+        @user.save
+      end
+      redirect_to users_url
+    end
   end
   
   private

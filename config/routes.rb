@@ -4,6 +4,8 @@ StudentTracker::Application.routes.draw do
     
   root  'pages#home'
   
+  match '/add_multiple_users' => 'users#add_multiple_users', via: [:get, :post]
+  #match '/add_multiple_users' => 'users#multicreate', via: [:post]
   match '/signin' => 'sessions#new', via: [:get, :post]
   match '/signout' => 'sessions#destroy', via: [:get, :post]
 end
