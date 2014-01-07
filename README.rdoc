@@ -16,11 +16,29 @@ This system will be a customizable ticket web application that will track and or
 
 <b>User Accounts:</b>
 
-- Ability to create, modify and delete a user account.
+Admins:
+- Ability to create and delete user accounts.
+- Admin account cannot be deleted.
+- Ability to change other user's variables.
 
-- Should be able to import a list of users for mass creation. (CSV File)
+Non-Admins:
+- You cannot delete your own account.
+- Ability to change their passwords.
+- Should not be able to access or change any information on other accounts.
 
-- Should be organized by Cohort/LC or Staff.
+Visual:
+- Non-Admin users should not be able to access anything within the Manage section.
+- The Manage section of the navigation bar should not be visible to non-admin users.
+- Error messages should appear if validations fail.
+
+
+Security: 
+For debug purposes, user account variables are able to be seen within the Home page.
+- Passwords should be encrypted and completely unique, even if the same password is used.
+- User first and last names are limited to 20 characters and must be present.
+- User emails should be present and valid, as well as unique.
+- Passwords should have a minimum length of 6 characters.
+- If a user account is created without a password, the default password should be 'yearup'.
 
 <b>Laptop Checkout Service:</b>
 
