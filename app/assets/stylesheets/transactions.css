@@ -22,6 +22,11 @@ table {
 }
 
 table th {
+	font-size: 15px;
 	text-align: left;
 	padding-right: 10px;
+}
+
+table td {
+	font-size: 13px;
 }

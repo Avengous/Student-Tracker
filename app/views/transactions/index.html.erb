@@ -13,7 +13,7 @@
 		</tr>
 		
 		<% @transaction.each do |transaction| %>
-		<tr>
+		<tr id="table_rows">
 			<td><%= transaction.laptop.itemname %></td>
 			<td><%= transaction.student.firstname %> <%= transaction.student.lastname %></td>
 			<td><%= transaction.user.firstname %> <%= transaction.user.lastname %></td>
