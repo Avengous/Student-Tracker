@@ -1,18 +1,20 @@
 <h1>Laptop Manager</h1>
 
-<div id="users_index">	
+<div id="laptop_index_table">	
 	<table>
 		<tr>
-			<th id="header_width">Item Name</th>
-			<th id="header_width">Scan Code</th>
+			<th>Item Name</th>
+			<th>Scan Code</th>
+			<th>Checked Out?</th>
 			<th></th>
 			<th></th>
 		</tr>
 		
 		<% @laptop.each do |laptop| %>
-		<tr>
+		<tr id="table_rows">
 			<td><%= laptop.itemname %></td>
 			<td><%= laptop.scancode %></td>
+			<td><%= laptop.available? ? "Yes" : "No"%></td>
 			
 			<td>
 				<button id="table_button" type="button">
@@ -27,9 +29,8 @@
 			</td>
 		</tr>
 		<% end %>
-	</table>	
-</div>
-
-<div id="table_footer">
+	</table>
+	<br />
 				<button id="table_button" type="button"><%= link_to "Add Laptop", new_laptop_path %></button>
 </div>
+

@@ -15,15 +15,9 @@ class TransactionsController < ApplicationController
   end
   
   def create
-    @transaction = Transaction.new(trans_params)
-    #@laptop = Laptop.find_by_id(@transaction.laptop_id)
-    #@student = Student.find_by_id(@transaction.student_id)
-    #@staff = User.find_by_id(@transaction.user_id)
-    
-    puts @transaction
-    
+    @transaction = Transaction.new(trans_params)   
     if @transaction.save
-      #@laptop.update_attribute(:available, true)
+      @transaction.laptop.update_attribute(:available, true)
       redirect_to transactions_path
     else
       render 'new'

@@ -1,16 +1,16 @@
 <h1>Student Manager</h1>
 
-<div id="users_index">	
+<div id="student_index_table">	
 	<table>
 		<tr>
-			<th id="header_width">Name</th>
-			<th id="header_width">Email</th>
+			<th>Name</th>
+			<th>Email</th>
 			<th></th>
 			<th></th>
 		</tr>
 		
 		<% @student.each do |student| %>
-		<tr>
+		<tr id="table_rows">
 			<td><%= student.firstname %> <%= student.lastname %></td>
 			<td><%= student.email %></td>
 			
@@ -27,9 +27,6 @@
 			</td>
 		</tr>
 		<% end %>
-	</table>	
-</div>
-
-<div id="table_footer">
-				<button id="table_button" type="button"><%= link_to "Add Student", new_student_path %></button>
+	</table><br />
+	<button id="table_button" type="button"><%= link_to "Add Student", new_student_path %></button>	
 </div>
