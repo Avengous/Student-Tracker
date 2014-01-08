@@ -17,7 +17,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(trans_params)   
     if @transaction.save
-      @transaction.laptop.update_attribute(:available, true)
+      @transaction.laptop.update_attribute(:available, false)
       redirect_to transactions_path
     else
       render 'new'
