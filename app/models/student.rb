@@ -15,4 +15,8 @@ class Student < ActiveRecord::Base
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX, multiline: true },
                     uniqueness: { case_sensitive: false }
+                    
+  def full_name
+    "#{firstname} #{lastname}"
+  end                    
 end
