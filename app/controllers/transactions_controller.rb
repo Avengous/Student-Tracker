@@ -24,9 +24,15 @@ class TransactionsController < ApplicationController
     end
   end
   
+  def edit
+    @transaction = Transaction.find(params[:id])
+    @title = "Checkout"
+  end
+  
   def update
+    @transaction = Transaction.find(params[:id])
     if @transaction.update_attributes(trans_params)
-      redirect_to @transaction
+      redirect_to transactions_path
     else
       render 'edit'
     end
