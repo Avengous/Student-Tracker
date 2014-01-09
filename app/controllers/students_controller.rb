@@ -37,6 +37,24 @@ class StudentsController < ApplicationController
     redirect_to students_url
   end
   
+  def add_multiple_students
+    @title = "Add Students"
+    @entries = params[:entries]
+    multicreate
+  end
+  
+  def multicreate
+    if @entries.nil? then
+    else
+      @entries.each_line do |entry|
+        entry = entry.split(" ")    
+        @student = Student.new(firstname: entry[0], lastname: entry[1], email: entry[2].downcase)
+        @student.save
+      end
+      redirect_to students_url
+    end
+  end
+  
   private
   
     def student_params

@@ -37,6 +37,24 @@ class LaptopsController < ApplicationController
     redirect_to laptops_url
   end
   
+  def add_multiple_laptops
+    @title = "Add Laptops"
+    @entries = params[:entries]
+    multicreate
+  end
+  
+  def multicreate
+    if @entries.nil? then
+    else
+      @entries.each_line do |entry|
+        entry = entry.split(" ")    
+        @laptop = Laptop.new(itemname: entry[0], scancode: entry[1])
+        @laptop.save
+      end
+      redirect_to laptops_url
+    end
+  end
+  
   private
   
     def laptop_params

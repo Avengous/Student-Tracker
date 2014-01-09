@@ -1,0 +1,23 @@
+<h1>Add Multiple Laptops</h1>
+
+<% flash.each do |key, message| %>
+  <div id="flash-<%= key %>" class="alert alert-<%= key %> fade in">
+  	<strong>Error:</strong><br />
+    <%= message %>
+  </div>
+<% end %>
+
+<div class="row">
+  <div id="multi_user_text_field" class="span6 offset3">
+    <%= form_tag(controller: "laptops", action: "add_multiple_laptops", method: "post", size: 100) do %> 
+	  <div>Format: SEA-LOANER-000 SOMESCANCODE</div>
+	  <div>Please separate each entry with a new line.</div><br />
+      <%= text_area_tag :entries, nil, size: '50x15'%>
+
+      <%= submit_tag "Add Laptops", :id => 'table_button' %>
+    <% end %>
+  </div>
+</div>
+
+	
+
