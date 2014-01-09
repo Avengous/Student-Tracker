@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :firstname, :lastname, :email, :password, :password_confirmation
+  attr_accessible :firstname, :lastname, :email, :password, :password_confirmation, :admin
   
   has_many :transactions, dependent: :destroy
   
