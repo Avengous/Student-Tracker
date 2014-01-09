@@ -52,7 +52,13 @@ class TransactionsController < ApplicationController
   end
   
   def destroy
-    Transaction.find(params[:id]).destroy
+    transaction = Transaction.find(params[:id])
+    if transaction.time_in.nil?
+      transaction.laptop.update_attribute(:available, true)
+      transaction.destroy
+    else
+      transaction.destroy
+    end  
     redirect_to transactions_url
   end
   
