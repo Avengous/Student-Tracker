@@ -4,6 +4,13 @@ class LaptopsController < ApplicationController
     @laptop = Laptop.all
   end
   
+  def show
+    @laptop = Laptop.find(params[:id])
+    @transaction = Transaction.where(:laptop_id => @laptop.id)
+    
+    @title = "History"
+  end
+  
   def new
     @laptop = Laptop.new
     @title = "New laptop"

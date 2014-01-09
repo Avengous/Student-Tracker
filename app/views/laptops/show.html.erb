@@ -1,6 +1,6 @@
-<h1>Laptop Checkout History</h1>
+<h1><%= "#{@laptop.itemname}" %>'s History</h1>
 
-<div id="checkout_history_table">	
+<<div id="checkout_history_table">	
 	<table>
 		<tr>
 			<th>Laptop</th>
@@ -8,15 +8,13 @@
 			<th>Moderator</th>
 			<th>Out Time</th>
 			<th>In Time</th>
-			<th></th>
+			<th></th>	
 		</tr>
 		
 		<% @transaction.each do |transaction| %>
 		<tr id="table_rows">
 			<td>
-				<%= link_to "#{transaction.laptop.itemname}",
-				 laptop_path(transaction.laptop.id),
-				 id: 'table_link' %>
+				<%= "#{transaction.laptop.itemname}" %>
 			</td>
 			<td>
 				<%= link_to "#{transaction.student.firstname} #{transaction.student.lastname}",
@@ -34,5 +32,9 @@
 			</td>
 		</tr>
 		<% end %>
-	</table>	
+	</table>
+	<br />
+	<button id="table_button" type="button">
+		<%= link_to "View All History", transactions_path %>
+	</button>
 </div>
