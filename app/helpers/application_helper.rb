@@ -11,8 +11,8 @@ module ApplicationHelper
   end
   
   def revision
-    #Rails.env.production? ? revision = HEAD_HASH : revision = `git rev-parse HEAD`.chomp
-    #return revision[0..12]
+    Rails.env.production? ? revision = ENV["HEROKU_RELEASE_NAME"] : revision = `git rev-parse HEAD`.chomp
+    return revision[0..12]
   end
 
 end
