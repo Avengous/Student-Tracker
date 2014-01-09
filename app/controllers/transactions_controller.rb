@@ -4,6 +4,19 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.all
   end
   
+  def checkin
+    @title = "Check-In"
+    #Modify to select transactions without an time in.
+    @transaction = Transaction.where(time_in: nil)
+  end
+  
+  def turn_in
+    transaction = Transaction.find(params[:id])
+    transaction.update_attribute(:time_in, Time.now.utc)
+    transaction.laptop.update_attribute(:available, true)
+    redirect_to checkin_path
+  end
+  
   def show 
     @transaction = Transaction.find(params[:id])
     @title = "Report"
@@ -48,4 +61,5 @@ class TransactionsController < ApplicationController
   def trans_params
     params.require(:transaction).permit(:student_id, :laptop_id, :user_id, :time_out, :time_in)
   end
+
 end
