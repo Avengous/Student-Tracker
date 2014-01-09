@@ -12,7 +12,11 @@
 		
 		<% @laptop.each do |laptop| %>
 		<tr id="table_rows">
-			<td><%= laptop.itemname %></td>
+			<td>
+				<%= link_to laptop.itemname,
+				 laptop,
+				 id: 'table_link' %>
+			</td>
 			<td><%= laptop.scancode %></td>
 			<td><%= laptop.available? ? "No" : "Yes"%></td>
 			

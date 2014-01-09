@@ -338,3 +338,8 @@ form input {
 #table_rows:hover {
 	background-color: #CCCCCC;
 }
+
+#table_link {
+	color: black;
+	text-decoration:underline;
+}

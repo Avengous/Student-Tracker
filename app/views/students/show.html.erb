@@ -1,6 +1,6 @@
-<h1>Laptop Checkout History</h1>
+<h1><%= "#{@student.firstname} #{@student.lastname}" %>'s History</h1>
 
-<div id="checkout_history_table">	
+<<div id="checkout_history_table">	
 	<table>
 		<tr>
 			<th>Laptop</th>
@@ -8,7 +8,7 @@
 			<th>Moderator</th>
 			<th>Out Time</th>
 			<th>In Time</th>
-			<th></th>
+			<th></th>	
 		</tr>
 		
 		<% @transaction.each do |transaction| %>
@@ -18,11 +18,7 @@
 				 laptop_path(transaction.laptop.id),
 				 id: 'table_link' %>
 			</td>
-			<td>
-				<%= link_to "#{transaction.student.firstname} #{transaction.student.lastname}",
-				 student_path(transaction.student.id),
-				 id: 'table_link' %>
-			</td>
+			<td><%= "#{transaction.student.firstname} #{transaction.student.lastname}" %></td>
 			<td><%= "#{transaction.user.firstname} #{transaction.user.lastname}" %></td>
 			<td><%= transaction.time_out.in_time_zone("Pacific Time (US & Canada)").strftime( "%_m/%-d/%Y %l:%M%p" ) %></td>
 			<td><%= transaction.time_in.nil? ? "" : transaction.time_in.in_time_zone("Pacific Time (US & Canada)").strftime( "%_m/%-d/%Y %l:%M%p" ) %></td>
@@ -34,5 +30,9 @@
 			</td>
 		</tr>
 		<% end %>
-	</table>	
+	</table>
+	<br />
+	<button id="table_button" type="button">
+		<%= link_to "View All History", transactions_path %>
+	</button>
 </div>

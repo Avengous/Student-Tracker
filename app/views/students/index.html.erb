@@ -11,7 +11,11 @@
 		
 		<% @student.each do |student| %>
 		<tr id="table_rows">
-			<td><%= student.firstname %> <%= student.lastname %></td>
+			<td>
+				<%= link_to "#{student.firstname} #{student.lastname}",
+				 student,
+				 id: 'table_link' %>
+			</td>
 			<td><%= student.email %></td>
 			
 			<td>

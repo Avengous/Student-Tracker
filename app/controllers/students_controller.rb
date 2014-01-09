@@ -4,6 +4,13 @@ class StudentsController < ApplicationController
     @student = Student.all
   end
   
+  def show
+    @student = Student.find(params[:id])
+    @transaction = Transaction.where(:student_id => @student.id)
+    
+    @title = "History"
+  end
+  
   def new
     @student = Student.new
     @title = "New Student"
