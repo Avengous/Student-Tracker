@@ -6,6 +6,9 @@ gem 'rails', '4.0.1'
 gem 'pg'
 gem 'protected_attributes'
 gem 'bcrypt-ruby', '3.1.2'
+gem 'mail'
+gem 'postmark'
+gem 'postmark-rails'
 
 group :development, :test do
 # Use sqlite3 as the database for Active Record

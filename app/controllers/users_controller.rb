@@ -64,6 +64,12 @@ class UsersController < ApplicationController
     end
   end
   
+  def test_email
+    
+    Notification.test_message.deliver
+    redirect_to root_path
+  end
+  
   private
   
     def user_params

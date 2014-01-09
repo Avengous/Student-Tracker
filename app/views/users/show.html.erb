@@ -4,3 +4,8 @@
 <h1>Password Digest: <%= @user.password_digest %></h2>
 <h1>Admin: <%= @user.admin %></h2>
 
+<h1>
+	<button id="table_button">
+		<%= link_to "Send Test Email", "/test_email", action: :test_email %>
+	</button>
+</h1>
