@@ -60,3 +60,11 @@ div.notice {
 	text-align: center;
 	color: red;
 }
+
+#admin_field_width {
+	width: 50px;
+}
+
+#user_admin {
+	float: left;
+}
