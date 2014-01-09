@@ -333,3 +333,8 @@ form label {
 form input {
 	margin-bottom: 10px;
 }
+
+/* Table Stuff */
+#table_rows:hover {
+	background-color: #CCCCCC;
+}

@@ -1,0 +1,36 @@
+<h1>Laptop Manager</h1>
+
+<div id="laptop_index_table">	
+	<table>
+		<tr>
+			<th>Item Name</th>
+			<th>Scan Code</th>
+			<th>Checked Out?</th>
+			<th></th>
+			<th></th>
+		</tr>
+		
+		<% @laptop.each do |laptop| %>
+		<tr id="table_rows">
+			<td><%= laptop.itemname %></td>
+			<td><%= laptop.scancode %></td>
+			<td><%= laptop.available? ? "No" : "Yes"%></td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Edit", edit_laptop_path(laptop) %>
+				</button>
+			</td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Delete", laptop, method: :delete, data: { confirm: "Are you sure?" } %>
+				</button>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+	<br />
+				<button id="table_button" type="button"><%= link_to "Add Laptop", new_laptop_path %></button>
+</div>
+

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :email, :password, :password_confirmation
   
+  has_many :transactions, dependent: :destroy
+  
   before_validation :new_user_password
   before_save { self.email = email.downcase }
   before_create :create_remember_token
@@ -22,7 +24,7 @@ class User < ActiveRecord::Base
   def password_validation_required?
     self.password_digest.blank? || !self.password.blank?
   end
-  
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -30,7 +32,7 @@ class User < ActiveRecord::Base
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
-
+  
   private
   
     def new_user_password
@@ -42,5 +44,5 @@ class User < ActiveRecord::Base
 
     def create_remember_token
       self.remember_token = User.encrypt(User.new_remember_token)
-    end
+    end  
 end

@@ -1,0 +1,19 @@
+<h1>Laptop Check-Out</h1>
+
+<%= form_for(@transaction) do |f| %>
+	<%= render 'shared/error_messages' %>
+	<div class="field">
+		<%= f.label :laptop_id, "Laptop" %><br />
+		<%= f.collection_select :laptop_id, available_laptops.order(:id),:id,:itemname, include_blank: 'Select Laptop' %><br />
+		<br />
+		<%= f.label :student_id, "Student" %><br />
+		<%= f.collection_select :student_id, Student.order(:firstname),:id, :full_name, include_blank: 'Select Student' %><br />
+		<%= f.hidden_field :user_id, :value => current_user.id %>				
+		<br />
+		<%= f.submit "Check-Out", id: "table_button" %>
+	</div>
+<% end %>
+
+<div class="notice">
+
+</div>

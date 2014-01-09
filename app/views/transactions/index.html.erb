@@ -1,0 +1,30 @@
+<h1>Laptop Checkout History</h1>
+
+<div id="checkout_history_table">	
+	<table>
+		<tr>
+			<th>Laptop</th>
+			<th>Checked Out By</th>
+			<th>Moderator</th>
+			<th>Out Time</th>
+			<th>In Time</th>
+			<th></th>
+		</tr>
+		
+		<% @transaction.each do |transaction| %>
+		<tr id="table_rows">
+			<td><%= transaction.laptop.itemname %></td>
+			<td><%= transaction.student.firstname %> <%= transaction.student.lastname %></td>
+			<td><%= transaction.user.firstname %> <%= transaction.user.lastname %></td>
+			<td><%= transaction.time_out.in_time_zone("Pacific Time (US & Canada)").strftime( "%_m/%-d/%Y %l:%M%p" ) %></td>
+			<td><%= transaction.time_in.nil? ? "" : transaction.time_in.in_time_zone("Pacific Time (US & Canada)").strftime( "%_m/%-d/%Y %l:%M%p" ) %></td>
+		
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Delete", transaction, method: :delete, data: { confirm: "Are you sure?" } %>
+				</button>
+			</td>
+		</tr>
+		<% end %>
+	</table>	
+</div>

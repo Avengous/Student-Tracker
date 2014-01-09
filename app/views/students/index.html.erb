@@ -1,0 +1,32 @@
+<h1>Student Manager</h1>
+
+<div id="student_index_table">	
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th></th>
+			<th></th>
+		</tr>
+		
+		<% @student.each do |student| %>
+		<tr id="table_rows">
+			<td><%= student.firstname %> <%= student.lastname %></td>
+			<td><%= student.email %></td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Edit", edit_student_path(student) %>
+				</button>
+			</td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Delete", student, method: :delete, data: { confirm: "Are you sure?" } %>
+				</button>
+			</td>
+		</tr>
+		<% end %>
+	</table><br />
+	<button id="table_button" type="button"><%= link_to "Add Student", new_student_path %></button>	
+</div>

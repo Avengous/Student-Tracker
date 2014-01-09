@@ -1,0 +1,32 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+form select, form label {
+	width: 150px;
+}
+
+#checkout_history_table {
+	text-align: center;
+}
+
+table {
+	background-color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: solid 1px black;
+	text-align: left;
+	display: inline-block;
+	width: 0 auto;
+}
+
+table th {
+	font-size: 15px;
+	text-align: left;
+	padding-right: 10px;
+}
+
+table td {
+	font-size: 13px;
+}
