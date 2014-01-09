@@ -11,7 +11,7 @@ module ApplicationHelper
   end
   
   def revision
-    revision = `git rev-parse HEAD`.chomp
+    Rails.env.production? ? revision = HEAD_HASH : revision = `git rev-parse HEAD`.chomp
     return revision[0..12]
   end
 
