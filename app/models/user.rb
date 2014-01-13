@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :email, :password, :password_confirmation, :admin
   
   has_many :transactions, dependent: :destroy
+  has_many :tickets, dependent: :destroy
   
   before_validation :new_user_password
   before_save { self.email = email.downcase }

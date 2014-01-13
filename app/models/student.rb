@@ -2,6 +2,7 @@ class Student < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :email
   
   has_many :transactions, dependent: :destroy
+  has_many :tickets, dependent: :destroy
   
   before_save { self.email = email.downcase }
   
