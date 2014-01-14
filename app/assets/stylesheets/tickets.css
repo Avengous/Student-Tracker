@@ -2,3 +2,70 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+#ticket_index_table {
+	text-align: center;
+}
+
+table {
+	background-color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: solid 1px black;
+	text-align: left;
+	display: inline-block;
+	width: 0 auto;
+}
+
+table th {
+	font-size: 15px;
+	text-align: left;
+	padding-right: 10px;
+}
+
+table td {
+	font-size: 13px;
+}
+
+/* Form Options */
+form {
+	width: 214px;
+}
+
+label {
+	width: 100px;
+}
+
+#ticket_title {
+	float: left;
+	width: 214px;
+}
+
+#ticket_status {
+	width: auto;
+	float: left;
+}
+
+#ticket_description {
+	float: left;
+	width: 214px;
+	height: 10em;
+}
+
+#ticket_assigned_user_id {
+	width: auto;
+	float: left;
+}
+
+#ticket_status_label {
+	float: left;
+	width: 85px;
+}
+
+#ticket_assigned_label {
+	float: left;
+	width: 129px;
+}
+
+#table_button {
+	margin-top: 1em;
+}

@@ -1,0 +1,39 @@
+<h1>Ticket Manager</h1>
+
+<div id="ticket_index_table">	
+	<table>
+		<tr>
+			<th>Ticket #</th>
+			<th>Title</th>
+			<th>Status</th>
+			<th>Assigned To</th>
+			<th>Last Updated</th>
+			<th></th>
+			<th></th>
+		</tr>
+		
+		<% @ticket.each do |ticket| %>
+		<tr id="table_rows">
+			<td><%= ticket.id %></td>
+			<td><%= ticket.title %></td>
+			<td><%= ticket.status %></td>
+			<td><%= ticket.assigned_user_id.firstname %></td>
+			<td><%= ticket%></td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Edit", edit_ticket_path(ticket) %>
+				</button>
+			</td>
+			
+			<td>
+				<button id="table_button" type="button">
+					<%= link_to "Delete", ticket, method: :delete, data: { confirm: "Are you sure?" } %>
+				</button>
+			</td>
+		</tr>
+		<% end %>
+	</table><br />
+	<button id="table_button" type="button"><%= link_to "New Ticket", new_ticket_path %></button>
+</div>
+

@@ -17,4 +17,5 @@ class Ticket < ActiveRecord::Base
     def set_creator
       self.created_user_id = current_user.id
     end
+    
 end
