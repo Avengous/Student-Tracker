@@ -1,6 +1,9 @@
 <h1>Ticket Manager</h1>
 
-<div id="ticket_index_table">	
+<div id="ticket_index_table">
+	<div id="pagination_container">
+		<%= will_paginate @ticket, next_label: '>', previous_label: '<' %>
+	</div>
 	<table>
 		<tr>
 			<th>#</th>

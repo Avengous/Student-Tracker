@@ -1,6 +1,9 @@
 <h1>Staff Manager</h1>
 
-<div id="users_index">	
+<div id="users_index">
+	<div id="pagination_container">
+		<%= will_paginate @user, next_label: '>', previous_label: '<' %>
+	</div>
 	<table>
 		<tr>
 			<th>Name</th>

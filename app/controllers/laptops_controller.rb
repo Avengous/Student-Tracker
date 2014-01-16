@@ -1,7 +1,7 @@
 class LaptopsController < ApplicationController
   def index
     @title = "Laptops"
-    @laptop = Laptop.all
+    @laptop = Laptop.paginate(:page => params[:page], :per_page => 20)
   end
   
   def show

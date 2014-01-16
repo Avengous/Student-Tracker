@@ -352,3 +352,18 @@ table {
    background: #234193;
    }
 
+/* Pagination */
+#pagination_container {
+	margin: 0 auto;
+	width: 50%;
+}
+
+div.pagination {
+	font-size: 12px;
+	color: #D68F01;
+	text-align: center;
+}
+
+div.pagination a {
+	color: #234193;
+}

@@ -1,6 +1,9 @@
 <h1>Student Manager</h1>
 
-<div id="student_index_table">	
+<div id="student_index_table">
+	<div id="pagination_container">
+		<%= will_paginate @student, next_label: '>', previous_label: '<' %>
+	</div>
 	<table>
 		<tr>
 			<th>Name</th>

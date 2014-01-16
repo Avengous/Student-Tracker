@@ -1,6 +1,9 @@
 <h1>Laptop Checkout History</h1>
 
-<div id="checkout_history_table">	
+<div id="checkout_history_table">
+	<div id="pagination_container">
+		<%= will_paginate @transaction, next_label: '>', previous_label: '<' %>
+	</div>
 	<table>
 		<tr>
 			<th>Laptop</th>

@@ -1,6 +1,9 @@
 <h1>Laptop Manager</h1>
 
-<div id="laptop_index_table">	
+<div id="laptop_index_table">
+	<div id="pagination_container">
+		<%= will_paginate @laptop, next_label: '>', previous_label: '<' %>
+	</div>	
 	<table>
 		<tr>
 			<th>Item Name</th>

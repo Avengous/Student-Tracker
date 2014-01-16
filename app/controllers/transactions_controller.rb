@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
   def index
     @title = "History"
-    @transaction = Transaction.all
+    @transaction = Transaction.paginate(:page => params[:page], :per_page => 20)
   end
   
   def checkin

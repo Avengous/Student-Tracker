@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   def index
     @title = "Students"
-    @student = Student.all
+    @student = Student.paginate(:page => params[:page], :per_page => 20)
   end
   
   def show

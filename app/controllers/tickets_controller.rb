@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
     
   def index
     @title = 'Tickets'
-    @ticket = Ticket.all
+    @ticket = Ticket.paginate(:page => params[:page], :per_page => 20)   
   end
   
   def show
