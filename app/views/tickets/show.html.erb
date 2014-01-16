@@ -1,7 +1,7 @@
 <div class="tickets_show">
 	<header>
 		<h1>
-			<%= @ticket.student_id.nil? ? "#{@ticket.title}" : "#{@ticket.student_id.full_name} - #{@ticket.title}" %>
+			<%= @ticket.student_id.nil? ? "#{@ticket.title}" : "#{@ticket.student.full_name} - #{@ticket.title}" %>
 		</h1>
 	</header>	
 	

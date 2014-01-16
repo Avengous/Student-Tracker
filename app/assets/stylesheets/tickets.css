@@ -60,14 +60,24 @@ label {
 	float: left;
 }
 
+#ticket_student_id {
+	width: auto;
+	float: left;
+}
+
 #ticket_status_label {
 	float: left;
 	width: 85px;
 }
 
+#ticket_student_label {
+	width: 106px;
+	float: left;
+}
+
 #ticket_assigned_label {
 	float: left;
-	width: 129px;
+	width: 132px;
 }
 
 #ticket_form_center_status {
@@ -76,11 +86,11 @@ label {
 
 #ticket_form_center_status_inner {
 	margin: 0 auto;
-	width: 72%
+	width: 100%
 }
 
 #ticket_form_center_status select, #ticket_form_center_status label {
-	margin: 0 10px 0 10px;
+	padding-right: 16.5px;
 }
 
 /* Show View */

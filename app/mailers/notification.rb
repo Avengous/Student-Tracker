@@ -13,12 +13,14 @@ class Notification < ActionMailer::Base
   def assign_ticket_message(ticket)
     name = "#{ticket.assigned_user.firstname} #{ticket.assigned_user.lastname}"
     email = ticket.assigned_user.email
+    title = nil
+    ticket.student_id.nil? ? title = ticket.title : title = "#{ticket.student.full_name} - #{ticket.title}"
     
     @client.deliver(
     from: "YUPS Notifications <g.schuoler0114@yearup.org>",
     to: "#{name} <#{email}>",
     subject: "You've been assigned a ticket",
-    html_body: "<b>Title: </b>#{ticket.title}<br /><b>Status: </b>#{ticket.status}<br /><br /><b>Description: </b><br />#{ticket.description}<br />"
+    html_body: "<b>Title: </b>#{title}<br /><b>Status: </b>#{ticket.status}<br /><br /><b>Description: </b><br />#{ticket.description}<br />"
     )
   end
   
