@@ -15,10 +15,10 @@ class Notification < ActionMailer::Base
     email = ticket.assigned_user.email
     
     @client.deliver(
-    from: "Notifications <g.schuoler0114@yearup.org>",
+    from: "YUPS Notifications <g.schuoler0114@yearup.org>",
     to: "#{name} <#{email}>",
     subject: "You've been assigned a ticket",
-    html_body: "<b>Title: </b>#{ticket.title}<br /><b>Status: </b>#{ticket.status}<br /><b>Description: </b><br />#{ticket.description}<br />"
+    html_body: "<b>Title: </b>#{ticket.title}<br /><b>Status: </b>#{ticket.status}<br /><br /><b>Description: </b><br />#{ticket.description}<br />"
     )
   end
   

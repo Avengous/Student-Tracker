@@ -1,11 +1,22 @@
-<h1>[<%= @user.id %>]<%= @user.firstname %> <%= @user.lastname %></h1>
-<h1><%= @user %></h2>
-<h1>Email: <%= @user.email %></h2>
-<h1>Password Digest: <%= @user.password_digest %></h2>
-<h1>Admin: <%= @user.admin %></h2>
-
-<h1>
-	<button id="table_button">
-		<%= link_to "Send Test Email", "/test_email", action: :test_email %>
-	</button>
-</h1>
+<div class="tickets_show">
+	<header>
+		<h1>
+			<%= @ticket.student_id.nil? ? "#{@ticket.title}" : "#{@ticket.student_id.full_name} - #{@ticket.title}" %>
+		</h1>
+	</header>	
+	
+	<div id="description">
+		<div id="description_inner">
+			<h2>Status: <%= @ticket.status %></h2>
+			<h2>Priority: <%= "@ticket.priority" %></h2>
+			<h2>Assigned To: <%= @ticket.assigned_user.nil? ? "------" : @ticket.assigned_user.full_name %></h2>
+		</div>
+		
+		<p><%= @ticket.description.gsub("\n","<br>\n").html_safe %></p>
+		
+		<div id="description_inner">		
+			<h2>Created: <%= @ticket.created_at.in_time_zone("Pacific Time (US & Canada)").strftime( "%l:%M%p %_m/%-d/%Y" ) %> by <%= @ticket.created_user.full_name %></h2>
+			<h2>Last Updated: <%= @ticket.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime( "%l:%M%p %_m/%-d/%Y" ) %></h2>
+		</div>
+	</div>
+</div>

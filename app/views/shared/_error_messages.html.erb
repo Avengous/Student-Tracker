@@ -33,3 +33,15 @@
 		</div>
 	<% end %>
 <% end %>
+
+<% if !@ticket.nil? %>
+	<% if @ticket.errors.any? %>
+		<div id="error_explanation">
+			<ul><strong><%= pluralize(@ticket.errors.count, "Error") %></strong>
+			<% @ticket.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+<% end %>

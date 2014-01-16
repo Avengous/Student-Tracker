@@ -24,20 +24,25 @@ table th {
 
 table td {
 	font-size: 13px;
+	cursor: pointer;
 }
 
 /* Form Options */
+#new_ticket div.field {
+	
+}
+
 form {
-	width: 214px;
+	width: 500px;
 }
 
 label {
-	width: 100px;
+	width: 500px;
 }
 
 #ticket_title {
 	float: left;
-	width: 214px;
+	width: 500px;
 }
 
 #ticket_status {
@@ -46,9 +51,8 @@ label {
 }
 
 #ticket_description {
-	float: left;
-	width: 214px;
-	height: 10em;
+	width: 500px;
+	height: 15em;
 }
 
 #ticket_assigned_user_id {
@@ -64,4 +68,65 @@ label {
 #ticket_assigned_label {
 	float: left;
 	width: 129px;
+}
+
+#ticket_form_center_status {
+	width: 100%;
+}
+
+#ticket_form_center_status_inner {
+	margin: 0 auto;
+	width: 72%
+}
+
+#ticket_form_center_status select, #ticket_form_center_status label {
+	margin: 0 10px 0 10px;
+}
+
+/* Show View */
+div.tickets_show #description {
+	width: auto;
+}
+
+div.tickets_show #description_inner {
+	width: 100%;
+}
+
+div.tickets_show header {
+	padding: 0;
+    margin: auto 150px auto 150px;
+	background-color: white;
+	border:2px solid black;
+	border-radius:25px;
+}
+
+div.tickets_show h1 {
+	background-color: #D68F01;
+	border-radius: inherit;
+	margin: 0;
+	font-size: 20px;
+	color: white;
+	text-shadow: 1px 1px black;
+}
+
+div.tickets_show #description_inner h2 {
+	display: inline;
+	background-color:#D68F01;
+	padding: 0 5px 0 5px;
+	margin-right: 10px;
+	border: 2px solid black;
+	font-size: 12px;
+}
+
+div.tickets_show #description_inner {
+
+}
+
+div.tickets_show #description {
+	height: auto;
+	padding: 10px 10px 10px 10px;
+    margin: 3px 150px auto 150px;
+	background-color: white;
+	border:2px solid black;
+	border-radius:25px;
 }

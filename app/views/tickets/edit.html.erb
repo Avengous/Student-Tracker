@@ -4,18 +4,22 @@
 	<%= render 'shared/error_messages' %>
 	<div class="field">
 		<%= f.label :title, "Title" %><br />
-		<%= f.text_field :title %><br />
+		<%= f.text_field :title, maxlength: 64 %><br />
 		<br />
+		<div id="ticket_form_center_status">
+		<div id="ticket_form_center_status_inner">
 		<%= f.label :status, "Status", id: 'ticket_status_label' %>
-		<%= f.label :assigned_user_id, "Assigned To", id: 'ticket_assigned_label' %><br />
+		<%= f.label :assigned_user_id, "Assigned To", id: 'ticket_assigned_label' %>
+		<%= f.label :priority, "Priority", id: 'ticket_status_label' %><br />
 		<%= f.select :status, options_for_select(%w[New Started Pending Resolved]) %>
-		<%= f.select :assigned_user_id,  User.all.collect {|p| [ "#{p.firstname} #{p.lastname}", p.id ] }, include_blank: '----------' %><br />
+		<%= f.collection_select :assigned_user_id, User.all, :id, :full_name, include_blank: '----------' %>
+		<%= f.select :status, options_for_select(%w[--- High Medium Low]) %><br />
+		</div>
+		</div>
 		<br />
 		<%= f.label :description %><br />
-		<%= f.text_area :description %><br />		
-
+		<%= f.text_area :description %><br />
 
 		<%= f.submit "Submit Ticket", id: "table_button" %>
 	</div>
 <% end %>
-

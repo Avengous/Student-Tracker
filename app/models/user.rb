@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+
+  def full_name
+    "#{self.firstname} #{self.lastname}"
+  end
   
   private
   
@@ -47,8 +51,4 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = User.encrypt(User.new_remember_token)
     end  
-    
-  def full_name
-    "#{self.firstname} #{self.lastname}"
-  end
 end

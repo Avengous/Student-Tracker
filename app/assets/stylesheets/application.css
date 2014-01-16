@@ -88,6 +88,7 @@ a {
 	height:30px;
 	margin: 0 auto;
 	vertical-align: middle;
+	text-shadow: 1px 1px black;
 }
 
 #navbar ul {
@@ -303,8 +304,13 @@ form input {
 }
 
 /* Table Stuff */
+table {
+	
+}
+
 #table_rows:hover {
 	background-color: #CCCCCC;
+	font-weight: bold;
 }
 
 #table_link {
