@@ -5,8 +5,8 @@
 		
 			<li><a>Tickets</a>
 				<ul>
-					<li><a href=<%= root_path %>>Submit a Ticket</a></li>
-					<li><a href=<%= root_path %>>View Tickets</a></li>
+					<li><a href=<%= new_ticket_path %>>Submit a Ticket</a></li>
+					<li><a href=<%= tickets_path %>>View Tickets</a></li>
 				</ul>
 			</li>
 	
@@ -21,7 +21,7 @@
 			<% if current_user.admin? %>
 			<li><a>Manage</a>
 				<ul>
-					<li><a href=<%= root_path %>>Tickets</a></li>
+					<li><a href=<%= tickets_path %>>Tickets</a></li>
 					<li><a href=<%= users_path %>>Staff</a></li>
 					<li><a href=<%= students_path %>>Students</a></li>
 					<li><a href=<%= laptops_path %>>Laptops</a></li>

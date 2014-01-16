@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :transactions, dependent: :destroy
   has_many :tickets, dependent: :destroy
   
+  
   before_validation :new_user_password
   before_save { self.email = email.downcase }
   before_create :create_remember_token
@@ -46,4 +47,8 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = User.encrypt(User.new_remember_token)
     end  
+    
+  def full_name
+    "#{self.firstname} #{self.lastname}"
+  end
 end

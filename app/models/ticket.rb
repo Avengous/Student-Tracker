@@ -1,10 +1,11 @@
 class Ticket < ActiveRecord::Base
-  attr_accessible :assigned_user_id, :created_user_id, :student_id, :title, :description, :status
+  attr_accessible :user_id, :assigned_user_id, :created_user_id, :student_id, :title, :description, :status, :created_at, :updated_at
   
-  belongs_to :user
+  has_many :users
+  belongs_to :assigned_user, class_name: 'User', foreign_key: 'assigned_user_id'
+  belongs_to :created_user, class_name: 'User', foreign_key: 'created_user_id'
+  
   belongs_to :student
-  
-  before_create :set_creator
   
   validates :title, :presence => true,
                     :length => { :maximum => 64 }
@@ -12,10 +13,4 @@ class Ticket < ActiveRecord::Base
   validates :description, :presence => true,
                           :length => { :maximum => 5000 }
   
-  private
-  
-    def set_creator
-      self.created_user_id = current_user.id
-    end
-    
 end

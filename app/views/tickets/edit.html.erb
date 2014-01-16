@@ -9,12 +9,13 @@
 		<%= f.label :status, "Status", id: 'ticket_status_label' %>
 		<%= f.label :assigned_user_id, "Assigned To", id: 'ticket_assigned_label' %><br />
 		<%= f.select :status, options_for_select(%w[New Started Pending Resolved]) %>
-		<%= f.select :assigned_user_id,  User.all.collect {|p| [ "#{p.firstname} #{p.lastname}", p.id ] } %><br />
+		<%= f.select :assigned_user_id,  User.all.collect {|p| [ "#{p.firstname} #{p.lastname}", p.id ] }, include_blank: '----------' %><br />
 		<br />
 		<%= f.label :description %><br />
 		<%= f.text_area :description %><br />		
 
 
-		<%= f.submit "Update Ticket", id: "table_button" %>
+		<%= f.submit "Submit Ticket", id: "table_button" %>
 	</div>
 <% end %>
+

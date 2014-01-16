@@ -3,9 +3,10 @@
 <div id="ticket_index_table">	
 	<table>
 		<tr>
-			<th>Ticket #</th>
+			<th>#</th>
 			<th>Title</th>
 			<th>Status</th>
+			<th>Created By</th>
 			<th>Assigned To</th>
 			<th>Last Updated</th>
 			<th></th>
@@ -17,8 +18,9 @@
 			<td><%= ticket.id %></td>
 			<td><%= ticket.title %></td>
 			<td><%= ticket.status %></td>
-			<td><%= ticket.assigned_user_id.firstname %></td>
-			<td><%= ticket%></td>
+			<td><%= ticket.created_user_id.nil? ? nil : "#{ticket.created_user.firstname} #{ticket.created_user.lastname}" %></td>
+			<td><%= ticket.assigned_user_id.nil? ? nil : "#{ticket.assigned_user.firstname} #{ticket.assigned_user.lastname}" %></td>
+			<td><%= ticket.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime( "%l:%M%p %_m/%-d/%Y" ) %></td>
 			
 			<td>
 				<button id="table_button" type="button">
