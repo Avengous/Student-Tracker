@@ -3,10 +3,22 @@ class Notification < ActionMailer::Base
   
   def test_message
     @client.deliver(
-    from: 'g.schuoler0114@yearup.org',
-    to: 'g.schuoler0114@yearup.org',
+    from: 'Test Notification <g.schuoler0114@yearup.org>',
+    to: 'Test Recipient <g.schuoler0114@yearup.org>',
     subject: 'Test Email',
     text_body: 'This is a test email.'
+    )
+  end
+  
+  def assign_ticket_message(ticket)
+    name = "#{ticket.assigned_user.firstname} #{ticket.assigned_user.lastname}"
+    email = ticket.assigned_user.email
+    
+    @client.deliver(
+    from: "Notifications <g.schuoler0114@yearup.org>",
+    to: "#{name} <#{email}>",
+    subject: "You've been assigned a ticket",
+    html_body: "<b>Title: </b>#{ticket.title}<br /><b>Status: </b>#{ticket.status}<br /><b>Description: </b>#{ticket.description}<br />"
     )
   end
   

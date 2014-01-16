@@ -20,7 +20,7 @@ class TicketsController < ApplicationController
     #@user = get_current_user
    
     if @ticket.save
-      @ticket.assigned_user_id.nil? ? nil : Notification.test_message
+      @ticket.assigned_user_id.nil? ? nil : Notification.assign_ticket_message(@ticket)
       redirect_to tickets_path
     else
       render 'new'
@@ -37,7 +37,7 @@ class TicketsController < ApplicationController
     
     if @ticket.update_attributes(ticket_params)
       redirect_to tickets_path
-      @ticket.assigned_user_id != @previous_value ? Notification.test_message : nil 
+      @ticket.assigned_user_id != @previous_value ? Notification.assign_ticket_message(@ticket) : nil 
     else
       render 'edit'
     end  
