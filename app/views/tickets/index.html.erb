@@ -6,7 +6,7 @@
 			<th>#</th>
 			<th>Student - Title</th>
 			<th>Status</th>
-			<th>Created By</th>
+			<th>Priority</th>
 			<th>Assigned To</th>
 			<th>Last Updated</th>
 			<th></th>
@@ -25,8 +25,8 @@
 				<%= ticket.status %>
 			</td>
 			
-			<td style="width: 130px" onclick="document.location = '<%= ticket_path(ticket) %>'">
-				<%= ticket.created_user_id.nil? ? nil : "#{ticket.created_user.firstname} #{ticket.created_user.lastname}" %>
+			<td style="width: 60px" onclick="document.location = '<%= ticket_path(ticket) %>'">
+				<%= ticket.priority.nil? ? 'Not Set' : ticket.priority %>
 			</td>
 			
 			<td style="width: 130px" onclick="document.location = '<%= ticket_path(ticket) %>'">

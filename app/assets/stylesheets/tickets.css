@@ -89,10 +89,6 @@ label {
 	width: 100%
 }
 
-#ticket_form_center_status select, #ticket_form_center_status label {
-	padding-right: 16.5px;
-}
-
 /* Show View */
 div.tickets_show #description {
 	width: auto;

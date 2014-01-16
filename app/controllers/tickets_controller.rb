@@ -52,7 +52,7 @@ class TicketsController < ApplicationController
   private
   
   def ticket_params
-    params.require(:ticket).permit(:user_id, :created_user, :assigned_user, :created_user_id, :assigned_user_id, :student_id, :title, :description, :status)
+    params.require(:ticket).permit(:priority, :user_id, :created_user, :assigned_user, :created_user_id, :assigned_user_id, :student_id, :title, :description, :status)
   end
   
   def assigned_value

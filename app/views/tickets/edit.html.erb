@@ -16,7 +16,7 @@
 		<%= f.select :status, options_for_select(%w[New Started Pending Resolved]) %>
 		<%= f.collection_select :student_id, Student.all, :id, :full_name, include_blank: '----------' %>
 		<%= f.collection_select :assigned_user_id, User.all, :id, :full_name, include_blank: '----------' %>
-		<%= f.select :status, options_for_select(%w[--- High Medium Low]) %><br />
+		<%= f.select :priority, options_for_select(%w[--- High Medium Low]) %><br />
 		</div>
 		</div>
 		<br />
