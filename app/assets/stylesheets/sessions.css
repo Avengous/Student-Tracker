@@ -2,3 +2,16 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+div.sign_in_outer {
+	display: inline;
+}
+
+div.sign_in_inner {
+	margin: 0 auto;
+	font-size: 14px;
+}
+
+div.sign_in_inner form, div.sign_in_inner label, #session_email, #session_password {
+	width: 150px;
+}
