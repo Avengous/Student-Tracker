@@ -216,7 +216,6 @@ header {
 footer {
 	font-size: 12px;
 	background-color: #234093;
-
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -230,7 +229,8 @@ footer {
 }
 
 #footer a {
-	color: black;
+	color: white;
+	text-shadow: 1px 1px black;
 }
 
 #revision {

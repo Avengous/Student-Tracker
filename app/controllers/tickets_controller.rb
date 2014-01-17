@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
     
   def index
     @title = 'Tickets'
-    @ticket = Ticket.paginate(:page => params[:page], :per_page => 20)   
+    @ticket = Ticket.where.not(status: 'Resolved').paginate(:page => params[:page], :per_page => 20).sort! { |a,b| b.updated_at <=> a.updated_at }
   end
   
   def show
@@ -49,6 +49,11 @@ class TicketsController < ApplicationController
     redirect_to tickets_url
   end
   
+  def get_resolved
+    @title = 'Tickets'
+    @ticket = Ticket.where(status: 'Resolved').paginate(:page => params[:page], :per_page => 20).sort! { |a,b| b.updated_at <=> a.updated_at }
+  end
+  
   private
   
   def ticket_params
@@ -60,5 +65,4 @@ class TicketsController < ApplicationController
     @previous_value = @ticket.assigned_user_id
     #return @previous_value
   end
-
 end

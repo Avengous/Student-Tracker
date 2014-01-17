@@ -54,7 +54,7 @@
 		</tr>
 		<% end %>
 	</table><br />
-	<button id="table_button" type="button"><%= link_to "View Resolved Tickets", controller: :tickets, action: :get_resolved %></button>
+	<button id="table_button" type="button"><%= link_to "View Ongoing Tickets", controller: :tickets, action: :index %></button>
 	<button id="table_button" type="button" style="margin-left: 820px"><%= link_to "New Ticket", new_ticket_path %></button>
 </div>
 
