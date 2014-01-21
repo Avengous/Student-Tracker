@@ -1,17 +1,17 @@
 <div class="user_show_center">
 	<h1><%= @user.firstname %> <%= @user.lastname %></h1>
 </div>
-<br />
+
 
 <div class="user_show_container">
 	<div class="user_show_inner">
 			
 			<div id="tickets_section">	
-			<h2>Active Tickets Assigned:</h2>
+			<h2>Assigned Tickets:</h2>
 				<table id="user_show_table">
 					<tr>
 						<th>#</th>
-						<th>Title</th>
+						<th id="user_header_width">Title</th>
 					</tr>
 					<% @ticket.each do |ticket| %>
 						<% if ticket.status != 'Resolved'%>
