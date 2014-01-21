@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @ticket = Ticket.where(assigned_user_id: @user.id)
+    @transaction = Transaction.where(user_id: @user.id)   
     @title = "#{@user.firstname} #{@user.lastname}"
   end
   

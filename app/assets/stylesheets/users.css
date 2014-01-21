@@ -68,3 +68,61 @@ div.notice {
 #user_admin {
 	float: left;
 }
+
+
+/* Show View */
+div.user_show_container {
+	text-align: center;
+	display: block;
+	margin: auto 150px auto 150px;
+	padding: 10px 10px 10px 10px;
+	width: auto;
+}
+
+div.user_show_container h2 {
+	font-size: 15px;
+	margin: 0;
+	background-color: #D68F01;
+	border: 1px solid black;
+	text-align: center;
+}
+
+div.user_show_center h1 {
+	width: auto;
+	margin: auto 30% auto 30%;
+	background-color: #D68F01;
+	border: 2px solid black;
+	border-radius: 25px;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+div.user_show_inner {
+	display: inline-block;
+	width: 100%;
+}
+
+#tickets_section, #laptops_section {
+	width: auto;
+	display: inline-block;
+	text-align: left;
+	margin: 0 15px 0 15px;
+}
+
+#laptops_section {
+	vertical-align: top;	
+}
+
+#ticket_listing {
+	font-size: 15px;
+}
+
+#user_show_table {
+	padding-top: 0;
+}
+
+#user_show_table th {
+	font-size: 12px;
+}
+
+

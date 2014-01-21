@@ -1,11 +1,47 @@
-<h1>[<%= @user.id %>]<%= @user.firstname %> <%= @user.lastname %></h1>
-<h1><%= @user %></h2>
-<h1>Email: <%= @user.email %></h2>
-<h1>Password Digest: <%= @user.password_digest %></h2>
-<h1>Admin: <%= @user.admin %></h2>
+<div class="user_show_center">
+	<h1><%= @user.firstname %> <%= @user.lastname %></h1>
+</div>
+<br />
 
-<h1>
-	<button id="table_button">
-		<%= link_to "Send Test Email", "/test_email", action: :test_email %>
-	</button>
-</h1>
+<div class="user_show_container">
+	<div class="user_show_inner">
+			
+			<div id="tickets_section">	
+			<h2>Active Tickets Assigned:</h2>
+				<table id="user_show_table">
+					<tr>
+						<th>#</th>
+						<th>Title</th>
+					</tr>
+					<% @ticket.each do |ticket| %>
+						<% if ticket.status != 'Resolved'%>
+							<tr id="table_rows" onclick="document.location = '<%= ticket_path(ticket) %>'">
+								<td><%= ticket.id %></td>
+								<td><%= h truncate(ticket.title, length: 31) %></td>
+							</tr>
+						<% end %>
+					<% end %>
+				</table>
+			</div>
+
+			<div id="laptops_section">
+			<h2>Laptops Moderating:</h2>
+				<table id="user_show_table">
+					<tr>
+						<th>Laptop</th>
+						<th>Checked Out By</th>
+					</tr>
+					<% @transaction.each do |transaction| %>
+						<% if transaction.time_in.nil? %>
+							<tr id="table_rows" onclick="document.location = '<%= checkin_path %>'">
+								<td><%= transaction.laptop.itemname %></td>
+								<td><%= "#{transaction.student.firstname} #{transaction.student.lastname}" %></td>
+							</tr>
+						<% end %>
+					<% end %>
+				</table>
+			</div>
+	</div>
+</div>
+
+
