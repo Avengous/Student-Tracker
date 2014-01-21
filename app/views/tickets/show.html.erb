@@ -8,7 +8,7 @@
 	<div id="description">
 		<div id="description_inner">
 			<h2>Status: <%= @ticket.status %></h2>
-			<h2>Priority: <%= "@ticket.priority" %></h2>
+			<h2>Priority: <%= @ticket.priority %></h2>
 			<h2>Assigned To: <%= @ticket.assigned_user.nil? ? "------" : @ticket.assigned_user.full_name %></h2>
 		</div>
 		
