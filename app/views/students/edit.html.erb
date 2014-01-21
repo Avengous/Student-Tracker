@@ -4,18 +4,18 @@
 
 <div class="row">
   	<div class="span6 offset3">
-    	<%= form_for(@student) do |f| %>
+    	<%= form_for(@student, :html => {id: "user_edit_form"}) do |f| %>
 		    <%= render 'shared/error_messages', object: f.object %>
 		    
-		    <%= f.label :firstname %>
+		    <%= f.label :firstname, 'First Name' %>
 		    <%= f.text_field :firstname %>
-		    
-		    <%= f.label :lastname %>
+		    <br />
+		    <%= f.label :lastname, 'Last Name' %>
 		    <%= f.text_field :lastname %>
-
+			<br />
 		    <%= f.label :email %>
 		    <%= f.text_field :email %>
-		
+			<br />
 		    <%= f.submit "Save Changes", class: "btn btn-large btn-primary", id: "table_button" %>
     	<% end %>
   	</div>

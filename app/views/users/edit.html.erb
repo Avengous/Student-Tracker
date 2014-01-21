@@ -4,21 +4,21 @@
 	<h1>Editing <%= @user.firstname %> <%= @user.lastname %></h1>
 		<div class="row">
 		  	<div class="span6 offset3">
-		    	<%= form_for(@user) do |f| %>
+		    	<%= form_for(@user, :html => {id: "user_edit_form"}) do |f| %>
 				    <%= render 'shared/error_messages', object: f.object %>
 				    
 				    <%= f.label :firstname %>
 				    <%= f.text_field :firstname %>
-				    
+				    <br />
 				    <%= f.label :lastname %>
 				    <%= f.text_field :lastname %>
-
+					<br />
 				    <%= f.label :email %>
 				    <%= f.text_field :email %>
-				    
+				    <br />
 				    <%= f.label :password %>
 				    <%= f.password_field :password %>
-				
+					<br />
 				    <%= f.label :password_confirmation, "Confirm Password" %>
 				    <%= f.password_field :password_confirmation %>
 				    <br />
@@ -36,15 +36,15 @@
 	
 	<div class="row">
 	  <div class="span6 offset3">
-	    <%= form_for(@user) do |f| %>
+	    <%= form_for(@user, :html => {id: "user_edit_form"}) do |f| %>
 	      <%= render 'shared/error_messages', object: f.object %>
 	
 	      <%= f.label :password %>
 	      <%= f.password_field :password %>
-	
+		  <br />
 	      <%= f.label :password_confirmation, "Confirm Password" %>
 	      <%= f.password_field :password_confirmation %>
-	
+
 	      <%= f.submit "Save Changes", class: "btn btn-large btn-primary", id: "table_button" %>
 	    <% end %>
 	  </div>
