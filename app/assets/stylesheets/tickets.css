@@ -136,3 +136,23 @@ div.tickets_show #description {
 	border:2px solid black;
 	border-radius:25px;
 }
+
+/* Comments */
+
+#comments {
+	border-top: 2px solid black;
+}	
+
+#comment_response {
+	width: 400px;
+	height: 7em;
+}
+
+#comments_creator {
+	text-decoration:underline;
+}
+
+#comments_highlight:hover {
+	background-color: #CCCCCC;
+	border: 1px solid black;
+}

@@ -5,6 +5,7 @@ StudentTracker::Application.routes.draw do
   resources :laptops
   resources :transactions, :path => "loaner"
   resources :tickets
+  resources :comments
     
   root  'pages#home'
   

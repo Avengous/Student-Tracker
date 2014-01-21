@@ -18,5 +18,35 @@
 			<h2>Created: <%= @ticket.created_at.in_time_zone("Pacific Time (US & Canada)").strftime( "%l:%M%p %_m/%-d/%Y" ) %> by <%= @ticket.created_user.full_name %></h2>
 			<h2>Last Updated: <%= @ticket.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime( "%l:%M%p %_m/%-d/%Y" ) %></h2>
 		</div>
+		<br />
+		<div id="comments">
+			<br />
+			<div id="comments_inner">
+				<div id="show_comments">
+					<% @response.each do |comment| %>
+						<div id="comments_highlight">
+							<div id="comments_creator"><%= comment.user.firstname %> <%= comment.user.lastname %> on <%= comment.created_at.in_time_zone("Pacific Time (US & Canada)").strftime( "%l:%M%p %_m/%-d/%Y" ) %></div>
+							<div id="comments_response"><%= comment.response.gsub("\n","<br>\n").html_safe %></div>
+							<br />
+						</div>
+					<% end %>
+				</div>	
+				
+				<div id="new_comment">
+					<%= form_for(@comment) do |f| %>
+						<%= render 'shared/error_messages' %>
+						<br />
+						<%= f.text_area :response %>
+						<%= f.hidden_field :user_id, value: current_user.id %>
+						<%= f.hidden_field :ticket_id, value: @ticket.id %>
+						<br />
+						<%= f.submit 'Add Comment', id: 'table_button' %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 </div>
+
+

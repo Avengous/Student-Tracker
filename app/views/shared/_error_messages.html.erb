@@ -45,3 +45,15 @@
 		</div>
 	<% end %>
 <% end %>
+
+<% if !@comment.nil? %>
+	<% if @comment.errors.any? %>
+		<div id="error_explanation">
+			<ul><strong><%= pluralize(@comment.errors.count, "Error") %></strong>
+			<% @comment.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+<% end %>

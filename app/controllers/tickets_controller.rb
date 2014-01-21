@@ -8,6 +8,8 @@ class TicketsController < ApplicationController
   
   def show
     @ticket = Ticket.find(params[:id])
+    @comment = Comment.new
+    @response = Comment.where(ticket_id: @ticket.id)
   end
   
   def new
