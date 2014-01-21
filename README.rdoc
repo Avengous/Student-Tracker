@@ -1,49 +1,10 @@
 == <b>Year Up Puget Sound - Student Tracker</b>
 
-This system will be a customizable ticket web application that will track and organize issues that occur during the student internship phase. It will also include the Laptop Checkout application.
+<b>Description:</b>
+A web application developed using the Ruby on Rails framework. Its purpose is to aid Year Up Puget Sound in tracking student loaned laptops and issues that may occur during a student's internship phase. It is also being used as testing material to aid the program's Quality Assurance course.
 
-== <b>Features</b>
-
-<b>Ticket Service:</b>
-
-- Ability to create, update and delete a ticket.
-
-- Ability to assign the ticket to a user.
-
-- Notifies users via Email when specific events occur. (Ex. Being assigned a ticket)
-
-- Should track a ticket’s history. 
-
-<b>User Accounts:</b>
-
-Admins:
-- Ability to create and delete user accounts.
-- Admin account cannot be deleted.
-- Ability to change other user's variables.
-
-Non-Admins:
-- You cannot delete your own account.
-- Ability to change their passwords.
-- Should not be able to access or change any information on other accounts.
-
-Visual:
-- Non-Admin users should not be able to access anything within the Manage section.
-- The Manage section of the navigation bar should not be visible to non-admin users.
-- Error messages should appear if validations fail.
-
-
-Security: 
-For debug purposes, user account variables are able to be seen within the Home page.
-- Passwords should be encrypted and completely unique, even if the same password is used.
-- User first and last names are limited to 20 characters and must be present.
-- User emails should be present and valid, as well as unique.
-- Passwords should have a minimum length of 6 characters.
-- If a user account is created without a password, the default password should be 'yearup'.
-
-<b>Laptop Checkout Service:</b>
-
-- Ability to add and delete a laptop.
-
-- Ability to checkout a laptop to a user.
-
-- Should track a laptop and user’s checkout history.
+<b>Requirements</b>
+- Ruby 2.0.0
+- Rails 4.0.1
+- PostgreSQL
+- Heroku Server w/PostMark and PostgreSQL Plugins.
