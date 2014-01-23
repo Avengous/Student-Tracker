@@ -4,7 +4,7 @@
 	<%= render 'shared/error_messages' %>
 	<div class="field">
 		<%= f.label :laptop_id, "Laptop" %><br />
-		<%= f.collection_select :laptop_id, available_laptops.order(:id),:id,:itemname, include_blank: 'Select Laptop' %><br />
+		<%= f.collection_select :laptop_id, available_laptops.order(:id),:id,:itemname, include_blank: 'Select Laptop', html: { }  %><br />
 		<br />
 		<%= f.label :student_id, "Student" %><br />
 		<%= f.collection_select :student_id, Student.order(:firstname),:id, :full_name, include_blank: 'Select Student' %><br />

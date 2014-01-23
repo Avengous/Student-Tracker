@@ -13,6 +13,22 @@
 		    <%= f.label :scancode, 'Scan Code' %>
 		    <%= f.text_field :scancode %>
 			<br />
+			<% find_transactions = Transaction.where( laptop_id: @laptop.id ) %>
+			
+			<% if find_transactions.to_a.size == 0 && @laptop.available %>
+				<%= f.label :available, 'Available for Checkout' %>
+				<%= f.check_box :available %>
+				<br />
+			<% elsif find_transactions.to_a.size == 1 && !@laptop.available %>
+				<%= f.label :available, 'Available for Checkout' %>
+				<%= f.check_box :available, disabled: true %>
+				<div class=notice>Laptop is currently checked out.</div>
+			<% else %>
+				<%= f.label :available, 'Available for Checkout' %>
+				<%= f.check_box :available %>
+				<br />
+			<% end %>
+			<br />
 		    <%= f.submit "Save Changes", class: "btn btn-large btn-primary", id: "table_button" %>
     	<% end %>
   	</div>
