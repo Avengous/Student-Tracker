@@ -9,6 +9,7 @@
 			<th>Item Name</th>
 			<th>Scan Code</th>
 			<th>Checked Out?</th>
+			<th>Disabled</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -22,6 +23,7 @@
 			</td>
 			<td><%= laptop.scancode %></td>
 			<td><%= laptop.available? ? "No" : "Yes"%></td>
+			<td><%= check_if_disabled(laptop) %></td>
 			
 			<td>
 				<button id="table_button" type="button">

@@ -25,3 +25,7 @@ table th {
 table td {
 	font-size: 13px;
 }
+
+#laptop_available {
+	float: left;
+}
