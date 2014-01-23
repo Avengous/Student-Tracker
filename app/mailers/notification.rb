@@ -24,6 +24,23 @@ class Notification < ActionMailer::Base
     )
   end
   
+  def ticket_comment_message(comment)
+    ticket = comment.ticket
+    user = comment.user
+    
+    name = "#{ticket.assigned_user.firstname} #{ticket.assigned_user.lastname}"
+    email = ticket.assigned_user.email
+    title = nil
+    ticket.student_id.nil? ? title = ticket.title : title = "#{ticket.student.full_name} - #{ticket.title}"
+    
+    @client.deliver(
+    from: "YUPS Notifications <g.schuoler0114@yearup.org>",
+    to: "#{name} <#{email}>",
+    subject: "#{user.firstname} has commented on #{title}",
+    html_body: "#{comment.user.firstname} #{comment.user.lastname} -<br />#{comment.response.gsub("\n","<br>\n").html_safe}"
+    )
+  end
+  
   private
   
   def setup_client

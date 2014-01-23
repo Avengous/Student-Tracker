@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
+      Notification.ticket_comment_message(@comment)
       redirect_to ticket_path(@comment.ticket.id)
     else
       redirect_to ticket_path(@comment.ticket.id)
