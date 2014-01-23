@@ -1,0 +1,5 @@
+<h1>Database Manager</h1>
+
+<%= button_to "Delete All Students", { controller: :pages, action: :delete_all_students }, {method: 'put', confirm: 'WARNING: This action will also enable all laptops to be available and delete all tickets related to current students. Are you sure you want to delete ALL student records?', id: 'admin_button'} %>
+<%= button_to "Delete All Laptops", { controller: :pages, action: :delete_all_laptops }, {method: 'put', confirm: 'WARNING: Are you sure you want to delete ALL laptop records?', id: 'admin_button'} %>
+<%= button_to "Delete All Tickets", { controller: :pages, action: :delete_all_tickets }, {method: 'put', confirm: 'WARNING: Are you sure you want to delete ALL ticket records?', id: 'admin_button'} %>
