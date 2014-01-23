@@ -319,6 +319,7 @@ table {
 }
 
 #table_button {
+   cursor: pointer;
    margin-bottom: 2px;
    border-style: none;
    background: #2a54b5;

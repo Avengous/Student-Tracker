@@ -2,3 +2,40 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+#admin_button {
+   margin-bottom: 5px;
+   border-style: none;
+   background: #2a54b5;
+   background: -webkit-gradient(linear, left top, left bottom, from(#234193), to(#2a54b5));
+   background: -webkit-linear-gradient(top, #234193, #2a54b5);
+   background: -moz-linear-gradient(top, #234193, #2a54b5);
+   background: -ms-linear-gradient(top, #234193, #2a54b5);
+   background: -o-linear-gradient(top, #234193, #2a54b5);
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 12px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   width: 15em;
+   height: 2em;
+}
+
+#admin_button:hover {
+   border-top-color: #d68f01;
+   background: #d68f01;
+   color: #ffffff;
+   cursor: pointer;
+   }
+   
+#admin_button:active {
+   border-top-color: #234193;
+   background: #234193;
+   }
