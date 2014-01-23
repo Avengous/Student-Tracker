@@ -22,7 +22,7 @@
 				 id: 'table_link' %>
 			</td>
 			<td><%= laptop.scancode %></td>
-			<td><%= laptop.available? ? "No" : "Yes"%></td>
+			<td><%= check_if_checked_out(laptop) %></td>
 			<td><%= check_if_disabled(laptop) %></td>
 			
 			<td>
